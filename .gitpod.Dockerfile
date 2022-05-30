@@ -12,7 +12,7 @@ RUN echo '[arquivolta]' >> /etc/pacman.conf && echo 'Server = https://x86-64.rep
 
 RUN pacman --noconfirm -Sy \
 	docker docker-compose screen htop vim git zsh sudo go \
-	arquivolta-new-user-template nodejs npm python-poetry
+	arquivolta-new-user-template nodejs npm python-poetry fzf ripgrep
 
 RUN echo '%wheel ALL=(ALL:ALL) ALL' > /etc/sudoers.d/00-enable-wheel && \
 	echo '' >> /etc/sudoers.d/00-enable-wheel \
