@@ -18,10 +18,10 @@ RUN echo '%wheel ALL=(ALL:ALL) ALL' > /etc/sudoers.d/00-enable-wheel && \
 	echo '' >> /etc/sudoers.d/00-enable-wheel \
 	chmod 644 /etc/sudoers.d/00-enable-wheel
 
-RUN useradd -m -G wheel -s /bin/zsh 'ani'
+RUN useradd -m -G wheel -s /bin/zsh 'gitpod'
 
-USER ani
-ENV USER ani
+USER gitpod
+ENV USER gitpod
 
 RUN cd /tmp && \
 	git clone https://aur.archlinux.org/yay.git && cd yay \
@@ -31,6 +31,3 @@ USER root
 ENV USER root
 
 RUN cd /tmp/yay && pacman --noconfirm -U $(ls *.zst)
-
-USER ani
-ENV USER ani
