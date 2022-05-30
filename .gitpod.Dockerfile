@@ -2,7 +2,9 @@ FROM archlinux:base-devel
 
 USER root
 
-RUN pacman-key --recv-keys 8C23AC40F9AC3CD756ADBB240D3678F5DF8F474D && \
+RUN pacman-key --init && \
+	pacman-key --populate archlinux && \
+	pacman-key --recv-keys 8C23AC40F9AC3CD756ADBB240D3678F5DF8F474D && \
 	pacman-key --lsign-key 8C23AC40F9AC3CD756ADBB240D3678F5DF8F474D && \
 	pacman -Syu --noconfirm
 
