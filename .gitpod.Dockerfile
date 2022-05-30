@@ -30,7 +30,7 @@ RUN cd /tmp && \
 USER root
 ENV USER root
 
-RUN pacman --noconfirm -U $(ls *.zst)
+RUN cd /tmp/yay && pacman --noconfirm -U $(ls *.zst)
 
 USER ani
 ENV USER ani
