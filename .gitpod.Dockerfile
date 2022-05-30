@@ -2,10 +2,8 @@ FROM archlinux:base-devel
 
 USER root
 
-ENV ARQUIVOLTA_KEY 8C23AC40F9AC3CD756ADBB240D3678F5DF8F474D
-
-RUN pacman-key --recv-keys ${ARQUIVOLTA_KEY} && \
-	pacman-key --lsign-key ${ARQUIVOLTA_KEY} && \
+RUN pacman-key --recv-keys 8C23AC40F9AC3CD756ADBB240D3678F5DF8F474D && \
+	pacman-key --lsign-key 8C23AC40F9AC3CD756ADBB240D3678F5DF8F474D && \
 	pacman -Syu --noconfirm
 
 RUN echo '[arquivolta]' >> /etc/pacman.conf && echo 'Server = https://x86-64.repo.arquivolta.dev' >> /etc/pacman.conf
