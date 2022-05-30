@@ -1,3 +1,3 @@
-FROM archlinux/base-devel
+FROM archlinux:base-devel
 
 USER root
