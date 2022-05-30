@@ -25,4 +25,12 @@ ENV USER ani
 
 RUN cd /tmp && \
 	git clone https://aur.archlinux.org/yay.git && cd yay \
-	&& makepkg && pacman --noconfirm -U $(ls *.zst)
+	&& makepkg 
+
+USER root
+ENV USER root
+
+RUN pacman --noconfirm -U $(ls *.zst)
+
+USER ani
+ENV USER ani
