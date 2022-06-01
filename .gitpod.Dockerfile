@@ -23,11 +23,11 @@ RUN pacman --noconfirm -Sy \
 USER gitpod
 ENV USER gitpod
 
-RUN cd /tmp && \
-	git clone https://aur.archlinux.org/yay.git && cd yay \
-	&& makepkg 
+# RUN cd /tmp && \
+#	git clone https://aur.archlinux.org/yay.git && cd yay \
+#	&& makepkg 
 
 USER root
 ENV USER root
 
-RUN cd /tmp/yay && pacman --noconfirm -U $(ls *.zst)
+#RUN cd /tmp/yay && pacman --noconfirm -U $(ls *.zst)
