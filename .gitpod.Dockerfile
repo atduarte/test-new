@@ -18,7 +18,7 @@ RUN pacman --noconfirm -Sy \
 	echo '' >> /etc/sudoers.d/00-enable-wheel \
 	chmod 644 /etc/sudoers.d/00-enable-wheel
 
-# RUN useradd -m -G wheel -s /bin/zsh 'gitpod'
+RUN useradd -m -G wheel -s /bin/zsh 'gitpod'
 
 USER gitpod
 ENV USER gitpod
